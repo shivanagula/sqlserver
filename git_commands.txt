@@ -18,6 +18,7 @@
     $ git add filename.txt
     $ git add -a # to include everything in the directory
     $ git add . # to include everything in the directory
+    
 6. Commit: Save changes to the local directory
     $ git commit -m "intial commit"
 
