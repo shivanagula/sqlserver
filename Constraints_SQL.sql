@@ -6,3 +6,8 @@ GO
 
 select *
 from customer;
+
+
+SELECT *
+FROM SYS.objects
+WHERE TYPE = 'D'
