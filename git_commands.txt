@@ -1,0 +1,118 @@
+1. Install git from https://git-scm.com/downloads
+    #check version
+    $ git --version
+    $ 
+
+2. Configure git
+    $ git config --global user.name "myname"
+    $ git config --global user.email "example@gmail.com"
+
+3. Create a repository and sample txt file in it
+    $ cd Desktop/git_exercise/
+    $ git init
+
+4. Checking status
+    $ git status
+
+5. Staging: which holds the changes which you would like to commit
+    $ git add filename.txt
+    $ git add -a # to include everything in the directory
+    $ git add . # to include everything in the directory
+6. Commit: Save changes to the local directory
+    $ git commit -m "intial commit"
+
+REMOTE REPOSITORIES
+-------------------
+
+1. Connecting to remote repository
+    $ git remote add origin https://github.com/shivanagula/sqlserver.git
+
+2. Upload to server
+    $ git push origin master
+
+3. Cloning repository
+    $ git clone https://github.com/shivanagula/sqlserver.git
+
+4. Getting changes from the server
+    $ git pull origin master
+
+5. Remove origin
+    $ git remote remove origin
+
+6.  Readding origin
+    $ git remote set-url origin https://github.com/shivanagula/sqlserver.git
+
+
+BRANCHES
+-------
+# Copy of original project is called BRANCHES. Branches have their own history and isolate their changes from one another until we merge master with a new branch.
+
+1. Creating a new branch:
+    $ git branch amazing_new_feature
+
+2. Switching Branches
+    $ git branch amazing_new_feature
+    $ git add feature.txt
+    $ git commit -m "New feature update"
+
+3. Merge Branches
+    # If we switch back to master branch then the files in the amazing_new_feature branch will be disappear. That's because we are back in the master branch, and here feature.txt was never created. To bring it in, we need to git merge the two branches together, applying the changes done in amazing_new_feature to the main version of the project.
+
+    $ git checkout master
+    $ git merge amazing_new_feature
+
+4. Removing Branch:
+    # The master branch is now up to date. The awesome_new_feature branch is no longer needed and can be removed.
+
+    $ git branch -d amazing_new_feature
+
+LOGS
+----
+1. List all commits
+    $ git log
+
+2. To see what's new in the commit
+    $ git show git_commit_id  # git_commit_id from git log
+
+3. To see different between 2 commits
+    $ git diff git_commit_id..git_commit_id
+
+4. Reversing commit
+    $ git checkout git_commit_id
+
+5. Fixing commit
+    $ git revert HEAD # The newest commit can be accessed by HEAD alias
+
+    # For other commits best to user with git_commit_id
+    $ git revert git_commit_id
+
+SETTING UP .GITIGNORE
+---------------------
+
+In most projects there are files or entire folders that we don't want to ever commit. We can make sure that they aren't accidentally included in our git add -A by creating a .gitignore file:
+
+Manually create a text file called .gitignore and save it in your project's directory.
+Inside, list the names of files/directories to be ignored, each on a new line.
+The .gitignore itself has to be added, committed and pushed, as it is just like any other file in the project.
+Good examples for files to be ignored are:
+
+log files
+task runner builds
+the node_modules folder in node.js projects
+folders created by IDEs like Netbeans and IntelliJ
+personal developer notes
+A .gitignore banning all of the above will look like this:
+
+*.log
+build/
+node_modules/
+.idea/
+my_notes.txt
+The slash at the end of some of the lines signals that this is a folder and we are ignoring everything inside it recursively. The asterisk serves it's usual function as a wild card.
+
+GIT ERRORS AND SOLUTIONS
+------------------------
+Erro: Another git process seems to be running and thus cant commit
+rm -f ./.git/index.lock
+
+    
