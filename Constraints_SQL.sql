@@ -1,9 +1,12 @@
 USE TESTDB
-SELECT *
+SELECT
+  *
 FROM INFORMATION_SCHEMA.TABLES
 GO
-
-select *
+select
+  *
 from customer;
-
 exec sp_help customer
+select
+  *
+from cutomer
