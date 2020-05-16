@@ -42,6 +42,10 @@ REMOTE REPOSITORIES
 6.  Readding origin
     $ git remote set-url origin https://github.com/shivanagula/sqlserver.git
 
+7. Add folders to github
+    $ git add "folder name" # folder name
+    $ git commit -u "folder name"
+
 
 BRANCHES
 -------
