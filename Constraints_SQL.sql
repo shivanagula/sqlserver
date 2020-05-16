@@ -3,3 +3,6 @@ USE TESTDB
 SELECT *
 FROM INFORMATION_SCHEMA.TABLES
 GO
+
+select *
+from customer;
