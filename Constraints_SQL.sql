@@ -5,3 +5,5 @@ GO
 
 select *
 from customer;
+
+exec sp_help customer
