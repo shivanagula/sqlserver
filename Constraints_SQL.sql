@@ -5,11 +5,3 @@ GO
 
 select *
 from customer;
-
-
-SELECT *
-FROM SYS.objects
-WHERE TYPE = 'D'
-
-SELECT *
-FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS
